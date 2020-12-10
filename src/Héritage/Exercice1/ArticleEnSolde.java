@@ -12,7 +12,6 @@ public class ArticleEnSolde extends Article{
 
     @Override
     public int afficher() {
-        //int afficher = Integer.parseInt(super.afficher());
         int percent = super.afficher()*réduction/100;
         return super.afficher() - percent;
     }
