@@ -1,6 +1,6 @@
 package Héritage.Exercice3;
 
-public class Personne {
+public abstract class Personne {
     private String nom;
     private String prenom;
     private int dateDeNaissance;
@@ -63,16 +63,15 @@ public class Personne {
                 '}';
     }
 
-    //Method modifiePersonne
+//Method modifiePersonne
     public void modifiePersonne(String adresse, String ville){
         setAdresse(adresse);
         setVille(ville);
         System.out.println();
     }
 
-//Method ecrirePersonne
-    public String ecrirePersonne(){
-        return toString();
-    }
+
+//Abstract Method ecrirePersonne
+    public abstract void ecrirePersonne();
 
 }
