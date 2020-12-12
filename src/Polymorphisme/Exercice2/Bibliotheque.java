@@ -1,6 +1,7 @@
 package Polymorphisme.Exercice2;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Bibliotheque {
 
@@ -16,14 +17,23 @@ public class Bibliotheque {
             Titres.add(titre);
             return new Ouvrage( titre, dateDeCréation, indicateur);
         }else {
-            return null;
+            //if you kept using the same titre it will return you the Scanner
+            Scanner newName = new Scanner(System.in);
+            System.out.println("Ouvrage titre deja exist Utiliser un nouveau titre");
+            String newTitre = newName.nextLine();
+            if (!Titres.contains(newTitre)){
+                Titres.add(newTitre);
+                return new Ouvrage( newTitre, dateDeCréation, indicateur);
+            }else {
+                return ajoutOuvrage(titre, dateDeCréation, indicateur);
+            }
         }
     }
 
 
 //Method getOuvrage :
-//    public Ouvrage getOuvrage(String Title){
-//        return Title.;
+//    public String getOuvrage(String titre){
+//        return Ouvrage.;
 //    }
 
 
@@ -33,7 +43,16 @@ public class Bibliotheque {
             ID.add(id);
             return new Abonne( id, nom, numAbonnement, ouvragePris);
         }else {
-            return null;
+            //if you kept using the same id it will return you the Scanner
+            Scanner newId = new Scanner(System.in);
+            System.out.println("Abonne id deja exist Utiliser un nouveau id");
+            int newID = newId.nextInt();
+            if (!ID.contains(newID)){
+                ID.add(newID);
+                return new Abonne( newID, nom, numAbonnement, ouvragePris);
+            }else {
+                return ajoutAbonne(id, nom, numAbonnement, ouvragePris);
+            }
         }
 
 

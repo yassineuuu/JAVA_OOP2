@@ -35,7 +35,15 @@ public class Abonne {
     }
 
 
+//Method Afficher
 
 
-
+    public String afficher() {
+        return "Abonne{" +
+                "id=" + id +
+                ", nom='" + nom + '\'' +
+                ", numAbonnement=" + numAbonnement +
+                ", ouvragePris='" + ouvragePris + '\'' +
+                '}';
+    }
 }
